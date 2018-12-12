@@ -18,6 +18,10 @@
         </activity>
         <activity android:name=".view.activities.DetailActivity" />
         <activity android:name=".view.activities.ListPointActivity"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="e033fc17f623777c0b07388c4f9669283ca33305" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

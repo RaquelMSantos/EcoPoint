@@ -7,6 +7,13 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.core.CrashlyticsCore;
+import com.crashlytics.android.ndk.CrashlyticsNdk;
+import com.crashlytics.android.ndk.CrashlyticsNdk;
+
+import br.com.rmso.ecopoint.BuildConfig;
+import io.fabric.sdk.android.Fabric;
 import java.util.ArrayList;
 
 import br.com.rmso.ecopoint.Constants;
@@ -33,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements AdapterOnClick{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Crashlytics crashlyticsKit = new Crashlytics.Builder()
+                .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
+                .build();
+        Fabric.with(this,crashlyticsKit);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
