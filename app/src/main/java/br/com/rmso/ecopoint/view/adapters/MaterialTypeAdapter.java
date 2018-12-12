@@ -38,7 +38,7 @@ public class MaterialTypeAdapter extends RecyclerView.Adapter<MaterialTypeAdapte
     @Override
     public void onBindViewHolder(@NonNull MaterialTypeViewHolder holder, int position) {
         final Point point = mPointList.get(position);
-        //holder.mNameMaterialTypeTextView.setText();
+        holder.mNameMaterialTypeTextView.setText(point.getTypeWaste());
     }
 
     @Override

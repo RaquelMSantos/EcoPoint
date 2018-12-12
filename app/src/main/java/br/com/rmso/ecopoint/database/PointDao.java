@@ -16,10 +16,10 @@ import br.com.rmso.ecopoint.service.model.Point;
 public interface PointDao {
 
     @Query("SELECT * FROM point ORDER BY id")
-    LiveData<List<Point>> loadAllMovie();
+    LiveData<List<Point>> loadAllPoints();
 
     @Insert
-    void insertPoint(Point point);
+    void insertPoint(List<Point> point);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void updatePoint (Point point);

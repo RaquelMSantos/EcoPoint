@@ -6,17 +6,31 @@ import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 @Entity(tableName = "point")
 public class Point implements Parcelable{
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private String typeWaste = "tiporesiduo";
-    private String neighborhood = "bairro";
-    private String note = "observacao";
-    private String longitude = "longitude";
-    private String latitude = "latitude";
-    private String address = "endereco";
-    private String complement = "complemento";
+    @Ignore
+    @SerializedName("records")
+    private List<Point> pointList;
+    @SerializedName("utilizacao")
+    private String typeWaste;
+    @SerializedName("localizacao1")
+    private String neighborhood;
+    @SerializedName("localizacao2")
+    private String note;
+
+    private String longitude;
+
+    private String latitude;
+
+    private String address;
+
+    private String complement;
 
     @Ignore
     public Point(){
@@ -61,6 +75,14 @@ public class Point implements Parcelable{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<Point> getPointList() {
+        return pointList;
+    }
+
+    public void setPointList(List<Point> pointList) {
+        this.pointList = pointList;
     }
 
     public String getTypeWaste() {
