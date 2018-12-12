@@ -50,4 +50,8 @@ dependencies {
     annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
     //CircleImageView
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+    //Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.1'
 }
+
+apply plugin: 'com.google.gms.google-services'

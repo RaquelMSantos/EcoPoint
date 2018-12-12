@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "29432751940",
+    "firebase_url": "https://ecopoints-921c3.firebaseio.com",
+    "project_id": "ecopoints-921c3",
+    "storage_bucket": "ecopoints-921c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29432751940:android:c7685e13cc139c95",
+        "android_client_info": {
+          "package_name": "br.com.rmso.ecopoint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29432751940-a7i8m4l4nhnq38b3eqja94lnfejrq5rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6mkSFUj4VtKUTy7uVVy3-uF4mtKXfizM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
