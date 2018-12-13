@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.rmso.ecopoint.PointTypesEnum;
 import br.com.rmso.ecopoint.R;
 import br.com.rmso.ecopoint.service.model.Point;
 import br.com.rmso.ecopoint.view.callback.AdapterOnClick;

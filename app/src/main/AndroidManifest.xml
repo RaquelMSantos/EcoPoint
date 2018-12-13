@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/recycling"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/recycling"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.activities.MainActivity">
@@ -16,11 +16,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activities.DetailActivity" />
-        <activity android:name=".view.activities.ListPointActivity"></activity>
+        <activity android:name=".view.activities.DetailActivity">
+            <meta-data
+                android:value=".view.activities.MainActivity"
+                android:name="android.support.PARENT_ACTIVITY"/>
+        </activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="e033fc17f623777c0b07388c4f9669283ca33305" />
+
+        <receiver android:name=".view.widget.PointWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/point_widget_info" />
+        </receiver>
+        <service android:name=".view.widget.PointWidgetService" />
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

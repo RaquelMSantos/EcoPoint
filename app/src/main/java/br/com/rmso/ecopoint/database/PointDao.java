@@ -19,7 +19,7 @@ public interface PointDao {
     LiveData<List<Point>> loadAllPoints();
 
     @Insert
-    void insertPoint(List<Point> point);
+    void insertPoint(Point point);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void updatePoint (Point point);

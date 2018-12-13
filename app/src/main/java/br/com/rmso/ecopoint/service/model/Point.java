@@ -13,10 +13,12 @@ import java.util.List;
 @Entity(tableName = "point")
 public class Point implements Parcelable{
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private int idKey;
     @Ignore
     @SerializedName("records")
     private List<Point> pointList;
+    @SerializedName("_id")
+    private String id;
     @SerializedName("tiporesiduo")
     private String typeWaste;
     @SerializedName("bairro")
@@ -37,7 +39,9 @@ public class Point implements Parcelable{
 
     }
 
-    public Point (String typeWaste, String neighborhood, String note, String longitude, String latitude, String address, String complement){
+    public Point (int idKey, String id, String typeWaste, String neighborhood, String note, String longitude, String latitude, String address, String complement){
+        this.idKey = idKey;
+        this.id = id;
         this.typeWaste = typeWaste;
         this.neighborhood = neighborhood;
         this.note = note;
@@ -48,6 +52,7 @@ public class Point implements Parcelable{
     }
 
     private Point (Parcel p) {
+        id = p.readString();
         typeWaste = p.readString();
         neighborhood = p.readString();
         note = p.readString();
@@ -69,11 +74,19 @@ public class Point implements Parcelable{
         }
     };
 
-    public int getId() {
+    public int getIdKey() {
+        return idKey;
+    }
+
+    public void setIdKey(int idKey) {
+        this.idKey = idKey;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -148,6 +161,7 @@ public class Point implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
         dest.writeString(typeWaste);
         dest.writeString(neighborhood);
         dest.writeString(note);
