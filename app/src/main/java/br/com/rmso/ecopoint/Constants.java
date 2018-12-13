@@ -5,7 +5,9 @@ import java.util.List;
 
 public class Constants {
 
-    public static String bundlePoints = "points";
+    public static String bundlePoint = "point";
+    public static final String keyStatic = "AIzaSyBiyElmq9WaXPRYZB9xNyTuM0v5RiQfVeQ";
+
     public static List<String> mPointTypes = new ArrayList<String>() {
         {
             add("ELETONICO");

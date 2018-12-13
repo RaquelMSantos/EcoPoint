@@ -17,19 +17,19 @@ public class Point implements Parcelable{
     @Ignore
     @SerializedName("records")
     private List<Point> pointList;
-    @SerializedName("utilizacao")
+    @SerializedName("tiporesiduo")
     private String typeWaste;
-    @SerializedName("localizacao1")
+    @SerializedName("bairro")
     private String neighborhood;
-    @SerializedName("localizacao2")
+    @SerializedName("observacao")
     private String note;
-
+    @SerializedName("longitude")
     private String longitude;
-
+    @SerializedName("latitude")
     private String latitude;
-
+    @SerializedName("endereco")
     private String address;
-
+    @SerializedName("complemento")
     private String complement;
 
     @Ignore

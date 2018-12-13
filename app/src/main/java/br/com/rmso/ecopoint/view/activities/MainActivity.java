@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity implements AdapterOnClick{
 
     @Override
     public void onClick(int position) {
-        Intent intent = new Intent(MainActivity.this, ListPointActivity.class);
-        intent.putExtra(Constants.bundlePoints, position);
+        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+        intent.putExtra(Constants.bundlePoint, position);
         startActivity(intent);
     }
 }

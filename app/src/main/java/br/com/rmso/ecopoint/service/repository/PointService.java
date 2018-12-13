@@ -6,8 +6,8 @@ import retrofit2.http.GET;
 
 public interface PointService {
 
-    String BASE_URL = "http://desafio.serttel.com.br/";
+    String BASE_URL = "http://raquel.servehttp.com/";
 
-    @GET("dadosRecifeSemaforo.json")
+    @GET("pontosColetaRecife.json")
     Call<Point> getPoints();
 }

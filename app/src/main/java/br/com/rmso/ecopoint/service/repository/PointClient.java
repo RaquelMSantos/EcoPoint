@@ -26,9 +26,7 @@ public class PointClient {
 
     public synchronized static PointClient getInstance() {
         if (pointClient == null) {
-            if (pointClient == null) {
-                pointClient = new PointClient();
-            }
+            pointClient = new PointClient();
         }
         return pointClient;
     }
