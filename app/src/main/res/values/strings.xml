@@ -6,4 +6,6 @@
     <string name="menu_favorities">Favoritos</string>
     <string name="menu_navigation">Navegação</string>
     <string name="menu_share">Compartilhar</string>
+    <string name="title_type_send">Tipo de Coleta: </string>
+    <string name="title_adrress_send">Endereço: </string>
 </resources>

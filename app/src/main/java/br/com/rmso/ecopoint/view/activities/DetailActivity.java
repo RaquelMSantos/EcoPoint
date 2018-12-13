@@ -19,6 +19,7 @@ import br.com.rmso.ecopoint.Utility;
 import br.com.rmso.ecopoint.service.model.Point;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.internal.Util;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -66,24 +67,28 @@ public class DetailActivity extends AppCompatActivity {
 
         }
 
-        mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.n_favotites:
+        mBottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.n_favotites:
 
-                        break;
-                    case R.id.n_navigation:
-                        Intent intent = new Intent(Intent.ACTION_VIEW,
-                                Uri.parse("http://maps.google.com/maps?daddr="+latitude+","+longitude));
-                                startActivity(intent);
-
-                        break;
-                    case R.id.n_share:
-                        break;
-                }
-                return true;
+                    break;
+                case R.id.n_navigation:
+                    Intent intent = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://maps.google.com/maps?daddr="+latitude+","+longitude));
+                            startActivity(intent);
+                    break;
+                case R.id.n_share:
+                    String type = Utility.mCurrentPointList.get(position).getTypeWaste();
+                    String address = Utility.mCurrentPointList.get(position).getAddress();
+                    Intent intentShare = new Intent(Intent.ACTION_SEND);
+                    String textSend = getResources().getString(R.string.title_type_send) + " " + type + "\n" +
+                            getResources().getString(R.string.title_adrress_send) + " " + address;
+                    intentShare.putExtra(Intent.EXTRA_TEXT, textSend);
+                    intentShare.setType("text/plain");
+                    startActivity(intentShare);
+                    break;
             }
+            return true;
         });
     }
 }
